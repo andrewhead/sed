@@ -153,6 +153,7 @@ compile_regex(b, flags, needed_sub)
   new_regex = ck_malloc(sizeof (struct regex) + re_len - 1);
   new_regex->flags = flags;
   memcpy (new_regex->re, get_buffer(b), re_len);
+  printf("Tutorons string: %s\n", new_regex->re);
 
 #ifdef REG_PERL
   new_regex->sz = re_len;
