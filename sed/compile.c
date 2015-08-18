@@ -962,6 +962,7 @@ compile_address(addr, ch)
 	    posix_address_modifier:
 	      savchar (ch);
 	      addr->addr_regex = compile_regex (b, flags, 0);
+              printf("Tutorons address: %s\n", addr->addr_regex->re);
 	      free_buffer(b);
 	      return true;
 	    }
@@ -1261,6 +1262,7 @@ compile_program(vector)
 	    flags = mark_subst_opts(cur_cmd->x.cmd_subst);
 	    cur_cmd->x.cmd_subst->regx =
 	      compile_regex(b, flags, cur_cmd->x.cmd_subst->max_id + 1);
+            printf("Tutorons substitution (slash: %c): %s\n", slash, cur_cmd->x.cmd_subst->regx->re);
 	    free_buffer(b);
 	  }
 	  break;
